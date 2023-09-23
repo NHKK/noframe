@@ -7,10 +7,14 @@
 </head>
 <body>
     <my-tabs>
-      <h1 slot="bundle">bundle</h1>
+      <div slot="bundle">
+        <h1> bundle </h1>
+        <bundle-form></bundle-form>
+      </div>
       <h1 slot="timer">tic toc</h1>
     </my-tabs>
 
+    <script type="module" src="static/js/bundleForm.js"></script>
     <script type="module" src="static/js/tabs.js"></script>
 </body>
 </html>

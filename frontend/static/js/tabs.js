@@ -36,6 +36,7 @@ class TabsComponent extends HTMLElement {
             </div>
         `;
     }
+
     addEventListeners() {
       const tabsbtn = this.shadowRoot.querySelectorAll('.tab-button');
         tabsbtn.forEach((btn, index) => {
