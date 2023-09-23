@@ -12,8 +12,13 @@ class TabsComponent extends HTMLElement {
     render() {
         this.shadowRoot.innerHTML = `
             <style>
+              #tabs{
+                font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+              }
               .tab{
                 display: none;
+                margin: 0 auto;
+                width: 75%;
               }
               .tab.active {
                 display: block;
@@ -23,12 +28,11 @@ class TabsComponent extends HTMLElement {
               <button class="tab-button">Tab 1</button>
               <button class="tab-button">Tab 2</button>
               <div id="tab1" class="tab active">
-                <p>
-                Content for Tab 1
-                  </p>
                 <slot name="bundle"></slot>
               </div>
-              <div id="tab2" class="tab">Content for Tab 2</div>
+              <div id="tab2" class="tab">
+                <slot name="timer"></slot>
+              </div>
             </div>
         `;
     }
