@@ -44,6 +44,9 @@ class BundleForm extends HTMLElement {
         <button type="submit">Submit</button>
       </form>
     `
+    const script = document.createElement('script');
+    script.src = "static/js/himom.js";
+    this.shadowRoot.appendChild(script);
   }
 
   addEventListener(){
@@ -53,6 +56,14 @@ class BundleForm extends HTMLElement {
       const formData = new FormData(this);
       console.log(formData);
       console.log(formData.getAll('products'));
+      fetch('/bundle').then(response => {
+        return response.text();
+      }).then(html => {
+          console.log("here here",document.body);
+          document.body.innerHTML = html;
+        }).catch(error => {
+          console.error('sadness', error);
+        })
 
     });
   }
