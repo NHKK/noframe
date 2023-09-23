@@ -11,6 +11,12 @@ class BundleForm extends HTMLElement {
 
   render(){
     this.shadowRoot.innerHTML = `
+      <style>
+        #config{
+          width: 100%;
+          box-sizing: border-box;
+        }
+      </style>
       <form id="bundleForm">
         <label for="env"> Env: </label>
         <input id="env" name="env" type="text" required/>
@@ -31,6 +37,10 @@ class BundleForm extends HTMLElement {
             <label> IT </label>
           </div>
         </fieldset>
+        <label for="config"> Config: </label>
+        <textarea id="config" name="config">
+        </textarea>
+        <br />
         <button type="submit">Submit</button>
       </form>
     `
