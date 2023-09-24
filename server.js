@@ -10,11 +10,25 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bundle', (req,res) => {
+  const url = 'https://my-json-server.typicode.com/nhkk/noframe/db';
+  fetch(url)
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      console.log('url called ', url);
+      console.log(data)
+    })
+
+})
+/*
+app.get('/bundle', (req,res) => {
   console.log('headers',req.headers);
   const htmlContent = `
       <h1> new content</h1>
     `;
     res.send(htmlContent);
-})
+});
+*/
 
 app.listen(process.env.PORT || 8080, () => console.log('server is up'));
