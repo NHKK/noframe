@@ -56,22 +56,15 @@ class BundleForm extends HTMLElement {
       const formData = new FormData(this);
       console.log(formData);
       console.log(formData.getAll('products'));
-      fetch('/bundle')
-        .then(response => {
-          console.log('returned bundle from backend', response);
-        })
-        .catch(error => {
-          console.error('sadness something went wrong', error);
-        })
-      // fetch('/bundle')
-      //   .then(response => {
-      //     return response.text();
-      //   }).then(html => {
-      //     console.log("here here",document.body);
-      //     document.body.innerHTML = html;
-      //   }).catch(error => {
-      //     console.error('sadness', error);
-      //   })
+      fetch("/bundle", {
+        method: "POST",
+        body: JSON.stringify({
+          title: "foo",
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }).then(response => console.log("done"));
     });
   }
 }
